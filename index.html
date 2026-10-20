@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio - Apria Deno Habi</title>
+    <!-- Script Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+            animation: {
+              "fade-in-up": "fadeInUp 1s ease-out forwards",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .cursor {
+        animation: blink 0.7s infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+    <!-- Navigasi -->
+    <nav class="flex justify-between items-center px-8 py-5 shadow-sm bg-white dark:bg-gray-800 sticky top-0 z-50">
+      <h2 class="text-xl font-bold tracking-wide">Apria Deno Habi</h2>
+      <button id="theme-toggle" class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg font-semibold hover:bg-gray-200 dark:hover:bg-gray-600 transition-all">🌙 Dark Mode</button>
+    </nav>
+
+    <!-- Bagian Hero / Perkenalan -->
+    <header class="max-w-6xl mx-auto py-16 md:py-24 px-6 opacity-0 animate-fade-in-up">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12 text-center md:text-left">
+        <!-- Elemen Foto Profil (Kiri pada layar besar) -->
+        <div class="flex-shrink-0">
+          <img src="k.jpeg" alt="Foto Profil Apria Deno Habi" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover object-top border-4 border-white dark:border-gray-800 shadow-xl" />
+        </div>
+
+        <!-- Teks Perkenalan (Kanan pada layar besar) -->
+        <div class="flex-1">
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Halo! Saya Apria Deno Habi</h1>
+          <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-700 dark:text-gray-300">
+            Fokus di bidang
+            <span id="typewriter" class="text-blue-600 dark:text-blue-400"></span>
+            <span class="cursor text-blue-600 dark:text-blue-400">|</span>
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
+            Saya adalah mahasiswa Ilmu Komputer di Universitas Bumigora yang memadukan keahlian teknis pemrograman dengan kreativitas multimedia. Saya terbiasa menggabungkan pola pikir logis dari
+            latar belakang IT dengan estetika desain visual untuk menciptakan karya inovatif, mulai dari pengembangan game engine dengan Unity, Augmented Reality (AR) interaktif menggunakan Vuforia,
+            hingga pemodelan 3D di Blender.
+          </p>
+
+          <!-- Tombol Aksi -->
+          <div class="flex flex-wrap justify-center md:justify-start gap-4">
+            <a href="#pengalaman" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-full transition-transform hover:-translate-y-1 shadow-lg"> Experience </a>
+
+            <a href="#proyek" class="px-8 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 font-medium rounded-full transition-transform hover:-translate-y-1">
+              Lihat Proyek
+            </a>
+            <!-- Tombol Unduh CV -->
+            <a
+              href="CV 1.pdf"
+              download
+              class="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-full transition-transform hover:-translate-y-1 shadow-lg flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              Unduh CV
+            </a>
+
+            <!-- Tombol Kontak Baru (Gaya Outline/Garis Luar) -->
+            <a
+              href="#kontak"
+              class="px-8 py-3 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 font-medium rounded-full transition-transform hover:-translate-y-1">
+              Hubungi Saya
+            </a>
+          </div>
+
+          <!-- Ikon Sosial Media & Email -->
+          <div class="mt-8 flex justify-center md:justify-start items-center gap-6">
+            <!-- GitHub -->
+            <a href="https://github.com/habi334455" target="_blank" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
+              <span class="sr-only">GitHub</span>
+              <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:apriahabi@gmail.com" class="text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors duration-300" title="Kirim Email">
+              <span class="sr-only">Email</span>
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/apria.dh/" target="_blank" class="text-gray-400 hover:text-pink-600 dark:hover:text-pink-500 transition-colors duration-300">
+              <span class="sr-only">Instagram</span>
+              <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Bagian Pengalaman Kerja -->
+    <section id="pengalaman" class="px-8 py-16 bg-white dark:bg-gray-800/50">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-10">Pengalaman Kerja</h2>
+
+        <!-- Card Pengalaman (Sudah ditambah class animasi) -->
+        <div
+          class="reveal-card opacity-0 translate-y-10 transition-all duration-700 ease-out bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">3D Environment Designer (KKP)</h3>
+              <p class="text-blue-600 dark:text-blue-400 font-medium text-lg">Digitelnusa</p>
+            </div>
+            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm font-semibold px-4 py-1.5 rounded-full whitespace-nowrap"> Juli 2025 – Agustus 2025 </span>
+          </div>
+          <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 space-y-3 text-base leading-relaxed mt-4">
+            <li>Berkolaborasi dalam tim untuk merancang dan mengembangkan game edukasi berbasis e-learning menggunakan platform Roblox Studio.</li>
+            <li>Mengaplikasikan prinsip pemilihan warna yang terstruktur pada lingkungan 3D untuk menciptakan suasana belajar yang intuitif.</li>
+            <li>Bertanggung jawab melakukan optimasi aset visual dan troubleshooting ringan untuk memastikan game berjalan lancar tanpa bug tabrakan objek (collision).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian Proyek -->
+    <section id="proyek" class="px-8 py-16 bg-gray-50 dark:bg-gray-900">
+      <h2 class="text-3xl font-bold text-center mb-12">Proyek Unggulan</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Card 1 -->
+        <div
+          class="reveal-card opacity-0 translate-y-10 transition-all duration-700 ease-out bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:-translate-y-2 flex flex-col">
+          <h3 class="text-xl font-bold mb-3">Virtual Tour Taman Narmada</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed flex-grow">
+            Mengembangkan aplikasi virtual tour interaktif berbasis web menggunakan game engine Unity dan bahasa pemrograman C#.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-semibold px-3 py-1 rounded-full"> Unity </span>
+            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-xs font-semibold px-3 py-1 rounded-full"> C# </span>
+          </div>
+          <!-- Tombol Link -->
+          <a
+            href="https://habi334455.github.io/tes-narmada/"
+            target="_blank"
+            class="text-center w-full px-4 py-2 bg-blue-50 hover:bg-blue-100 dark:bg-gray-700 dark:hover:bg-gray-600 text-blue-600 dark:text-blue-400 font-semibold rounded-lg transition-colors border border-blue-100 dark:border-gray-600">
+            Lihat Demo Web &rarr;
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="reveal-card opacity-0 translate-y-10 transition-all duration-700 delay-100 ease-out bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:-translate-y-2 flex flex-col">
+          <h3 class="text-xl font-bold mb-3">AR App (Vuforia)</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed flex-grow">
+            Membangun aplikasi Augmented Reality (AR) marker-based untuk memunculkan objek 3D interaktif ke dunia nyata.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 text-xs font-semibold px-3 py-1 rounded-full"> Vuforia </span>
+            <span class="bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 text-xs font-semibold px-3 py-1 rounded-full"> AR </span>
+          </div>
+          <!-- Tombol Link -->
+          <a
+            href="https://drive.google.com/drive/folders/1CzmZYqITaXMJsayCky6aXy_hB6K4xl__"
+            target="_blank"
+            class="text-center w-full px-4 py-2 bg-purple-50 hover:bg-purple-100 dark:bg-gray-700 dark:hover:bg-gray-600 text-purple-600 dark:text-purple-400 font-semibold rounded-lg transition-colors border border-purple-100 dark:border-gray-600">
+            Lihat Aplikasi &rarr;
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="reveal-card opacity-0 translate-y-10 transition-all duration-700 delay-200 ease-out bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:-translate-y-2 flex flex-col">
+          <h3 class="text-xl font-bold mb-3">Short Movie Project</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed flex-grow">
+            Menyunting video cerita pendek dengan fokus utama pada perancangan alur cerita visual dan penerapan color grading sinematik.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300 text-xs font-semibold px-3 py-1 rounded-full"> Video Editing </span>
+            <span class="bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300 text-xs font-semibold px-3 py-1 rounded-full"> Color Grading </span>
+          </div>
+          <!-- Tombol Link -->
+          <a
+            href="https://www.instagram.com/reel/DUBRBtHjXMG/?utm_source=ig_web_copy_link&cplk=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA=="
+            target="_blank"
+            class="text-center w-full px-4 py-2 bg-pink-50 hover:bg-pink-100 dark:bg-gray-700 dark:hover:bg-gray-600 text-pink-600 dark:text-pink-400 font-semibold rounded-lg transition-colors border border-pink-100 dark:border-gray-600">
+            Tonton Video &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Bagian Pendidikan -->
+    <section id="pendidikan" class="px-8 py-16 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-10">Pendidikan</h2>
+
+        <div
+          class="reveal-card opacity-0 translate-y-10 transition-all duration-700 ease-out bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 gap-2">
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">Ilmu Komputer</h3>
+              <p class="text-blue-600 dark:text-blue-400 font-medium text-lg">Universitas Bumigora</p>
+            </div>
+            <div class="flex flex-col md:items-end text-left md:text-right mt-2 md:mt-0">
+              <span class="bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 text-sm font-semibold px-4 py-1.5 rounded-full whitespace-nowrap mb-1"> September 2022 - 2026 </span>
+              <span class="text-sm font-semibold text-gray-600 dark:text-gray-400 mt-1">IPK: 3.68 / 4.0</span>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <p class="text-gray-700 dark:text-gray-300 mb-3 font-semibold text-sm">Fokus Studi:</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-blue-50 transition-colors">
+                Sistem Multimedia
+              </span>
+              <span class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-blue-50 transition-colors">
+                Pengolahan Citra Digital
+              </span>
+              <span class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-blue-50 transition-colors">
+                UI/UX Design
+              </span>
+              <span class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-blue-50 transition-colors">
+                Web Programming
+              </span>
+              <span class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-blue-50 transition-colors">
+                Game Development
+              </span>
+              <span class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-blue-50 transition-colors">
+                AR/VR
+              </span>
+              <span class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-blue-50 transition-colors">
+                Grafika Komputer & Pemodelan 3D
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian Keahlian -->
+    <section class="px-8 py-16 bg-white dark:bg-gray-800/50">
+      <h2 class="text-3xl font-bold text-center mb-12">Keahlian & Tools</h2>
+      <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Box 1 -->
+        <div class="reveal-card opacity-0 translate-y-10 transition-all duration-700 ease-out bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+          <h3 class="font-bold mb-4 text-gray-900 dark:text-white">Multimedia & 3D</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">Blender</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">Sketchup</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">DaVinci Resolve</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">Premiere Pro</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">Lightroom</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">Figma</span>
+          </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="reveal-card opacity-0 translate-y-10 transition-all duration-700 delay-100 ease-out bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+          <h3 class="font-bold mb-4 text-gray-900 dark:text-white">Game & AR</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">Unity</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">Vuforia</span>
+          </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="reveal-card opacity-0 translate-y-10 transition-all duration-700 delay-200 ease-out bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+          <h3 class="font-bold mb-4 text-gray-900 dark:text-white">Programming</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">C#</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">PHP</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">Python</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="reveal-card opacity-0 translate-y-10 transition-all duration-700 delay-300 ease-out bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-100 dark:border-gray-700">
+          <h3 class="font-bold mb-4 text-gray-900 dark:text-white">Dev Tools</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">VS Code</span>
+            <span class="bg-gray-200 dark:bg-gray-700 text-xs px-2 py-1 rounded">Git/Github</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Bagian Kontak -->
+    <section id="kontak" class="px-8 py-20 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-6">Mari Berkolaborasi</h2>
+        <p class="text-center text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
+          Tertarik untuk bekerja sama, punya tawaran proyek, atau sekadar ingin menyapa? Jangan ragu untuk mengirim pesan kepada saya!
+        </p>
+
+        <!-- Formulir -->
+        <!-- Catatan: Ganti URL di atribut 'action' dengan link dari Formspree nanti -->
+        <form
+          action="https://formspree.io/f/mppqgajo"
+          method="POST"
+          class="reveal-card opacity-0 translate-y-10 transition-all duration-700 ease-out bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700">
+          <div class="mb-6">
+            <label for="name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"> Nama Anda </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Masukkan nama Anda"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" />
+          </div>
+
+          <div class="mb-6">
+            <label for="email" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2"> Email Anda </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="contoh@email.com"
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" />
+          </div>
+
+          <div class="mb-8">
+            <label for="message" class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Pesan</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder="Tulis pesan Anda di sini..."
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-transform hover:-translate-y-1 shadow-md">Kirim Pesan &rarr;</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 bg-white dark:bg-gray-900 text-gray-500 dark:text-gray-400 text-sm border-t border-gray-200 dark:border-gray-800">&copy; 2026 Apria Deno Habi.</footer>
+
+    <!-- Menghubungkan file JS -->
+    <script src="script.js"></script>
+    <!-- Tombol Kembali ke Atas -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 p-4 bg-blue-600 text-white rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-blue-700 hover:-translate-y-1 z-50"
+      aria-label="Kembali ke atas">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+      </svg>
+    </button>
+  </body>
+</html>
